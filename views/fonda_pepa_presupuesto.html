@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Presupuesto - Fonda Pepa</title>
+    <link rel="stylesheet" href="../css/fonda_pepa_css.css">
+</head>
+<body>
+    <!-- Header con menú de navegación -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🍽️ Fonda Pepa</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./fonda_pepa_productos.html">Nuestros Platos</a></li>
+                    <li><a href="./fonda_pepa_presupuesto.html" class="active">Presupuesto</a></li>
+                    <li><a href="./fonda_pepa_contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Página de Presupuesto -->
+    <main class="budget-page">
+        <div class="container">
+            <h2 class="page-title">Solicitar Presupuesto</h2>
+            <p class="page-subtitle">¿Organizas un evento? Cuéntanos qué necesitas y te enviaremos un presupuesto personalizado</p>
+
+            <div class="form-container">
+                <!-- Formulario con validación HTML -->
+                <form id="budgetForm">
+                    <!-- Campo Nombre -->
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            required 
+                            minlength="3"
+                            placeholder="Introduce tu nombre completo">
+                        <div class="error-message" id="nombreError" role="alert"></div>
+                    </div>
+
+                    <!-- Campo Email -->
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                            placeholder="ejemplo@correo.com">
+                        <div class="error-message" id="emailError" role="alert"></div>
+                    </div>
+
+                    <!-- Campo Teléfono -->
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input 
+                            type="tel" 
+                            id="telefono" 
+                            name="telefono" 
+                            required 
+                            pattern="[0-9]{9}"
+                            minlength="9"
+                            maxlength="9"
+                            placeholder="123456789">
+                        <div class="error-message" id="telefonoError" role="alert"></div>
+                    </div>
+
+                    <!-- Campo Información -->
+                    <div class="form-group">
+                        <label for="informacion">Solicite más información *</label>
+                        <textarea 
+                            id="informacion" 
+                            name="informacion" 
+                            rows="6" 
+                            required 
+                            minlength="10"
+                            placeholder="Cuéntanos sobre tu evento: número de personas, tipo de celebración, fecha aproximada, preferencias de menú, etc."></textarea>
+                        <div class="error-message" id="informacionError" role="alert"></div>
+                    </div>
+
+                    <!-- Checkbox de privacidad - Campo obligatorio -->
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input 
+                                type="checkbox" 
+                                id="privacidad" 
+                                name="privacidad" 
+                                required>
+                            He leído y acepto la <a href="#politica-privacidad" target="_blank">Política de Privacidad</a> *
+                        </label>
+                        <div class="error-message" id="privacidadError" role="alert"></div>
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <button type="submit" class="btn-submit">Enviar Solicitud</button>
+                </form>
+
+                <!-- Mensaje de éxito (oculto inicialmente) -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <h3>✅ ¡Solicitud enviada con éxito!</h3>
+                    <p>Nos pondremos en contacto contigo en las próximas 24 horas.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" title="Facebook">
+                            <img src="../images/facebook-icon.png" alt="Facebook" width="24" height="24">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram">
+                            <img src="../images/instagram-icon.png" alt="Instagram" width="24" height="24">
+                        </a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter">
+                            <img src="../images/twitter-icon.png" alt="Twitter" width="24" height="24">
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Dirección</h3>
+                    <p>19 Av. de Juan Grande<br>29014 Málaga, España<br>Tel: 952 123 456</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <a href="#aviso-legal">Aviso Legal</a><br>
+                    <a href="#politica-privacidad">Política de Privacidad</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Fonda Pepa. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de validación -->
+    <script src="../js/validacion_js.js"></script>
+</body>
+</html>
